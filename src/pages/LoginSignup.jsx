@@ -99,10 +99,10 @@ const LoginSignup = () => {
                                 <Box sx={{ mt: 2 }}>
                                     {error && <Typography color="error" variant="body2">{error}</Typography>}
                                     <form onSubmit={handleLoginSubmit}>
-                                        <TextField className='text-box' label="Email" variant="outlined" fullWidth margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} type="email" slotProps={{  inputLabel: { shrink: email.length > 0 }, form: { autocomplete: 'off' } }} />
+                                        <TextField className='text-box' label="Email" variant="outlined" fullWidth margin="normal" value={email} onChange={(e) => setEmail(e.target.value)} type="email" />
                                         {/* slotProps={{ inputLabel: { shrink: true } }} */}
-                                        <TextField className='text-box' label="Password" variant="outlined" fullWidth margin="normal" value={password} onChange={(e) => setPassword(e.target.value)} type="password" slotProps={{ inputLabel: { shrink: password.length > 0 } }} />
-
+                                        <TextField className='text-box' label="Password" variant="outlined" fullWidth margin="normal" value={password} onChange={(e) => setPassword(e.target.value)} type="password" />
+                                        {/* slotProps={{ inputLabel: { shrink: password.length > 0 } }}  */}
                                         <Button className='solid-button' variant="contained" color="primary" fullWidth type="submit" sx={{ mt: 2, '&:focus, &focus-visible': { outline: 'none' } }}>Login</Button>
                                     </form>
                                 </Box>

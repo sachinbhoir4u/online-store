@@ -92,7 +92,7 @@ button:focus-visible {
 .text-box label {
   color: #2e8b57 !important;
   border-color: #2e8b57 !important;
-  line-height: 1.2em !important;
+  // line-height: 1.2em !important;
   // background: #ffffff;
 }
 .tabs {
@@ -105,6 +105,10 @@ button:focus-visible {
 button:focus,
 button:focus-visible {
   outline: none !important;
+}
+.footer-sect > div {
+  width: 30%;
+  height: 140px;
 }
 /* For Chrome, Edge, and Safari (Webkit-based browsers) */
 ::-webkit-scrollbar {
@@ -136,6 +140,16 @@ scrollbar track {
   background-color: #f0f0f0; /* Light gray color for the track */
   border-radius: 10px; /* Optional: Makes the track rounded */
 }
+/* screen width : mobile */
+@media (min-width: 320px) and (max-width: 480px) {
+  .footer-sect > div {
+    width: 100%;
+    height: 140px;
+  }
+  .scroll-to-top {
+    padding: 5px !important;
+  }
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -148,4 +162,25 @@ scrollbar track {
   button {
     background-color: #f9f9f9;
   }
+}
+.scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px;
+  background-color: #47a951;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  font-size: 24px;
+  z-index: 1000;
+  opacity: 0.8;
+}
+.scroll-to-top:hover {
+  opacity: 1;
 }
