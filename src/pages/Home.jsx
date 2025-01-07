@@ -5,10 +5,10 @@ import Footer from '../components/Footer';
 import Carousal from '../components/Carousal';
 
 const featuredProducts = [
-    { id: 1, name: 'Product 1', description: 'Description for product 1', image: '/assets/product/product1.jpg', price: '$29.99' },
-    { id: 2, name: 'Product 2', description: 'Description for product 2', image: '/assets/product/product2.jpg', price: '$49.99' },
-    { id: 3, name: 'Product 3', description: 'Description for product 3', image: '/assets/product/product3.jpg', price: '$19.99' },
-    { id: 4, name: 'Product 4', description: 'Description for product 4', image: '/assets/product/product4.jpg', price: '$39.99' }
+    { id: 1, name: 'Product 1', description: 'Description for product 1', image: 'https://placehold.co/250x250', price: '$29.99' },
+    { id: 2, name: 'Product 2', description: 'Description for product 2', image: 'https://placehold.co/250x250?text=Product', price: '$49.99' },
+    { id: 3, name: 'Product 3', description: 'Description for product 3', image: 'https://placehold.co/250x250', price: '$19.99' },
+    { id: 4, name: 'Product 4', description: 'Description for product 4', image: 'https://placehold.co/250x250?text=Product', price: '$39.99' }
 ]
 
 const Home = () => {

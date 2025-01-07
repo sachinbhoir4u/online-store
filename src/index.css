@@ -125,6 +125,73 @@ button:focus-visible {
 .product-card {
   max-width: 250px;
 }
+/* Carousal Component Css */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  margin: 64px 0 auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  // border-radius: 8px;
+}
+
+.carousel-container button {
+  position: absolute;
+  top: 50%;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border: none;
+}
+.carousel-container button:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.prev-button {
+  left: 20px;
+}
+
+.next-button {
+  right: 20px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: #fff;
+}
+
 /* For Chrome, Edge, and Safari (Webkit-based browsers) */
 ::-webkit-scrollbar {
   width: 8px; /* Adjust the width of the scrollbar */

@@ -1,31 +1,52 @@
-import { Box } from '@mui/material'
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
-import carousal1 from '../assets/images/carousel1.jpg'
-import carousal2 from '../assets/images/carousel2.jpg'
-import carousal3 from '../assets/images/carousel3.jpg'
+import { useState, useEffect } from 'react';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
 const Carousal = () => {
-    return (
-      <div>
-      <Box sx={{ my: 5, marginTop:'64px', height: '400px' }}>
-        <Carousel sx={{ maxHeight: '400px' }} showStatus={false} showArrows={true} showThumbs={false} autoPlay={true} interval={3000} infiniteLoop={true}>
-            <div>
-            <img src={carousal1} alt="Featured Product 1" style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }} />
-            {/* <Typography variant="h6" sx={{ textAlign: 'center', color: '#fff', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>Featured Product 1</Typography> */}
-            </div>
-            <div>
-            <img src={carousal2} alt="Featured Product 2" style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }} />
-            {/* <Typography variant="h6" sx={{ textAlign: 'center', color: '#fff', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>Featured Product 2</Typography> */}
-            </div>
-            <div>
-            <img src={carousal3} alt="Featured Product 3" style={{ maxHeight: '400px', width: '100%', objectFit: 'cover' }} />
-            {/* <Typography variant="h6" sx={{ textAlign: 'center', color: '#fff', backgroundColor: 'rgba(0, 0, 0, 0.5)', padding: '10px' }}>Featured Product 3</Typography> */}
-            </div>
-        </Carousel>
-    </Box>
-    </div>
-    )
-}
+  const images = [
+    'https://placehold.co/1900x500',
+    'https://placehold.co/1900x500?text=Image',
+    'https://placehold.co/1900x500?text=Image+3',
+    'https://placehold.co/1900x500',
+  ];
 
-export default Carousal
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
+  };
+  useEffect(() => {
+    const interval = setInterval(nextSlide, 3000); // Slide every 3 seconds
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
+
+  return (
+    <div className="carousel-container">
+      <div className="carousel-inner">
+        <img src={images[currentIndex]} alt="carousel" className="carousel-image" />
+      </div>
+      <button className="prev-button" onClick={prevSlide}>
+        <ChevronLeftIcon style={{ color: '#ffffff', width: '20px', height: '20px' }}/>
+      </button>
+      <button className="next-button" onClick={nextSlide}>
+        <ChevronRightIcon style={{ color: '#ffffff', width: '20px', height: '20px' }}/>
+      </button>
+      <div className="carousel-indicators">
+        {images.map((_, index) => (
+          <span
+            key={index}
+            className={`indicator ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => setCurrentIndex(index)}
+          ></span>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default Carousal;
