@@ -1,4 +1,3 @@
-# online-store
 
 # React + Vite
 
