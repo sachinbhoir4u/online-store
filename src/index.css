@@ -106,9 +106,24 @@ button:focus,
 button:focus-visible {
   outline: none !important;
 }
-.footer-sect > div {
+/* .footer-sect > div {
   width: 30%;
   height: 140px;
+} */
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item {
+  flex-grow: 1;
+  flex-basis: 200px;
+  justify-content: space-evenly;
+}
+.flex-container > :not(:first-child) {
+  padding-left: 15px;
+}
+.product-card {
+  max-width: 250px;
 }
 /* For Chrome, Edge, and Safari (Webkit-based browsers) */
 ::-webkit-scrollbar {

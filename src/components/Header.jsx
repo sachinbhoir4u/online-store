@@ -30,6 +30,7 @@ const Header = () => {
         { label: 'Contact Us', to: '/contact-us' },
     ];
     // console.log('location.pathname', location.pathname)
+    
     return (
         <AppBar position="fixed" sx={{ width: '100%', height: '64px', backgroundImage: 'linear-gradient(to right, #4CAF50, #2E8B57)' }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
