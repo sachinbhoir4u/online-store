@@ -34,11 +34,11 @@ const Header = () => {
     return (
         <AppBar position="fixed" sx={{ width: '100%', height: '64px', backgroundImage: 'linear-gradient(to right, #FFFFFF, #eaeaf9)' }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                <Link to="/home" style={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center' }}>
+                <Link to="/home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                     <img src={logo} width="60" height="50" alt="Logo" />
                 </Link>
 
-                <Box sx={{ display: { xs: 'none', sm: 'flex' }, width: 'auto', '&:hover > .MuiButton-root': { color: '#ffffff' } }}>
+                <Box sx={{ color: '#333333', display: { xs: 'none', sm: 'flex' }, width: 'auto', '&:hover > .MuiButton-root': { color: '#333333' } }}>
                 {menuItems.map((item) => (
                     <Button className='menu-item' key={item.label} color="inherit" component={Link} to={item.to}>
                         {item.label}
@@ -46,14 +46,14 @@ const Header = () => {
                 ))}
                 </Box>
                 
-                <IconButton className='cart-icon' color="inherit" component={Link} to="/cart">
+                <IconButton className='cart-icon' component={Link} to="/cart">
                     <Badge badgeContent={0} color="error">
                         <ShoppingCartIcon />
                     </Badge>
                 </IconButton>
 
                 {location.pathname === '' || location.pathname === '/login' || location.pathname === '/signup' ? '' :<Box sx={{ width: 'auto', float: 'right' }}>
-                    <Button key={'login'} color="inherit" component={Link} to={isLoggedIn ? '/' : '/login'} sx={{ color: '#fffff', border: '1px solid #7a9c89', '&:hover': { color: '#ffffff', borderColor: '#ffffff' } }} onClick={isLoggedIn ? handleLogout : undefined}>
+                    <Button key={'login'} color="inherit" component={Link} to={isLoggedIn ? '/' : '/login'} sx={{ color: '#333333', border: '1px solid #7a9c89', '&:hover': { color: '#333333', borderColor: '#999999' } }} onClick={isLoggedIn ? handleLogout : undefined}>
                         { isLoggedIn ? 'Logout' : 'Login / Signup' }
                     </Button>
                 </Box>}
