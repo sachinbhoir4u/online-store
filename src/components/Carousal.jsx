@@ -1,13 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/react/20/solid'
 
-const Carousal = () => {
-  const images = [
-    'https://placehold.co/1900x500',
-    'https://placehold.co/1900x500?text=Image',
-    'https://placehold.co/1900x500?text=Image+3',
-    'https://placehold.co/1900x500',
-  ];
+const Carousal = ({images}) => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -21,8 +15,8 @@ const Carousal = () => {
     );
   };
   useEffect(() => {
-    const interval = setInterval(nextSlide, 3000); // Slide every 3 seconds
-    return () => clearInterval(interval); // Cleanup on unmount
+    const interval = setInterval(nextSlide, 3000); 
+    return () => clearInterval(interval);
   }, []);
 
   return (

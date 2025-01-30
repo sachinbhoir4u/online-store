@@ -32,7 +32,7 @@ const Header = () => {
     // console.log('location.pathname', location.pathname)
     
     return (
-        <AppBar position="fixed" sx={{ width: '100%', height: '64px', backgroundImage: 'linear-gradient(to right, #4CAF50, #2E8B57)' }}>
+        <AppBar position="fixed" sx={{ width: '100%', height: '64px', backgroundImage: 'linear-gradient(to right, #FFFFFF, #eaeaf9)' }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link to="/home" style={{ textDecoration: 'none', color: 'white', display: 'flex', alignItems: 'center' }}>
                     <img src={logo} width="60" height="50" alt="Logo" />

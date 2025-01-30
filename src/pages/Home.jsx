@@ -10,6 +10,12 @@ const featuredProducts = [
     { id: 3, name: 'Product 3', description: 'Description for product 3', image: 'https://placehold.co/250x250', price: '$19.99' },
     { id: 4, name: 'Product 4', description: 'Description for product 4', image: 'https://placehold.co/250x250?text=Product', price: '$39.99' }
 ]
+const images = [
+    'https://placehold.co/1900x500',
+    'https://placehold.co/1900x500?text=Image',
+    'https://placehold.co/1900x500?text=Image+3',
+    'https://placehold.co/1900x500',
+  ];
 
 const Home = () => {
   return (
@@ -17,7 +23,7 @@ const Home = () => {
         {/* Header Section */}
         <Header />
         {/* Carousel Section */}
-        <Carousal/>
+        <Carousal images={images} />
 
         <Box sx={{ height: 'auto', backgroundImage: 'url(/path/to/hero-image.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center', marginTop: '40px' }}>
             <Typography variant="h2" color="#333333" sx={{ fontWeight: 'bold' }}>Welcome to Our Store</Typography>
