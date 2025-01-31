@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { TextField, Button, Box, Typography, Container, Tab, Tabs, Paper } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import Header from '../components/Header'
+import GoogleLogin from '../components/GoogleLogin';
 
 const LoginSignup = () => {
     const [tabValue, setTabValue] = useState(0);
@@ -24,7 +25,7 @@ const LoginSignup = () => {
     // })
 
     useEffect(() => {
-        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const isLoggedIn = localStorage.getItem('user');
         if (isLoggedIn) {
             navigate('/home');
             setError('');
@@ -61,7 +62,7 @@ const LoginSignup = () => {
         return;
         }
         if (email === 'user@example.com' && password === 'asdfgh@123') {
-            localStorage.setItem('isLoggedIn', 'true');
+            localStorage.setItem('user', email);
             navigate('/home');
         } else {
             setError('Invalid email or password.');
@@ -79,7 +80,7 @@ const LoginSignup = () => {
             return;
         }
         setError('');
-        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('user', email);
         navigate('/home');
     };
 
@@ -126,7 +127,10 @@ const LoginSignup = () => {
                                     </form>
                                 </Box>
                             )}
+                        {/* Google Login */}
+                        <GoogleLogin />
                         </Paper>
+                        
                     </Box>
                 </Container>
             </div>
