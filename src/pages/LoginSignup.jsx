@@ -91,7 +91,7 @@ const LoginSignup = () => {
                 <Container id='login-container' maxWidth="xs" sx={{ paddingTop: '30px', height: '500px' }}>
                     <Box sx={{ my: 4, marginTop: '64px' }}>
                         <Paper elevation={3} sx={{ p: 3 }}>
-                            <Tabs value={tabValue} onChange={handleTabChange} centered  TabIndicatorProps={{ style: { backgroundColor: '#2E8B57' } }}>
+                            <Tabs value={tabValue} onChange={handleTabChange} centered  TabIndicatorProps={{ style: { backgroundColor: '#333333' } }}>
                                 <Tab label="Login" className={`${tabValue === 0 ? 'tabs active' : 'tabs'}`}/>
                                 <Tab label="Sign Up" className={`${tabValue === 0 ? 'tabs' : 'tabs active'}`}/>
                             </Tabs>
