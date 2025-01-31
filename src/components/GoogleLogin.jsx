@@ -35,7 +35,7 @@ const GoogleLoginComponent = () => {
 //   };
 
   return (
-    <div>
+    <div className="google-button-container">
       <div id="google-sign-in-button" className='google-button'></div>
     </div>
   );
