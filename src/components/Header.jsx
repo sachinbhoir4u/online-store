@@ -1,25 +1,21 @@
 import { useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { AppBar, Toolbar, Button, IconButton, Badge, Box, Drawer, List, ListItem, ListItemText, useMediaQuery, useTheme } from '@mui/material';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '/main-logo.svg';
 import ScrollToTopButton from './ScrollToTopButton';
+import UserDetails from './UserDetails';
 
 const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-    const location = useLocation();
-    const navigate = useNavigate();
-    const isLoggedIn = localStorage.getItem('isLoggedIn') || null;
+    
     const toggleDrawer = (open) => {
         setDrawerOpen(open);
     };
-    const handleLogout = () => {
-        localStorage.removeItem('isLoggedIn');
-        navigate('/login');
-    };
+    
     const menuItems = [
         { label: 'Men', to: '/category/men' },
         { label: 'Women', to: '/category/women' },
@@ -32,13 +28,13 @@ const Header = () => {
     // console.log('location.pathname', location.pathname)
     
     return (
-        <AppBar position="fixed" sx={{ width: '100%', height: '64px', backgroundImage: 'linear-gradient(to right, #FFFFFF, #eaeaf9)' }}>
+        <AppBar position="fixed" sx={{ width: '100%', height: '64px', backgroundColor: '#2962FF' }}>
             <Toolbar sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <Link to="/home" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center' }}>
                     <img src={logo} width="60" height="50" alt="Logo" />
                 </Link>
 
-                <Box sx={{ color: '#333333', display: { xs: 'none', sm: 'flex' }, width: 'auto', '&:hover > .MuiButton-root': { color: '#333333' } }}>
+                <Box sx={{ color: '#FFFFFF', display: { xs: 'none', sm: 'flex' }, width: 'auto', '&:hover > .MuiButton-root': { color: '#FFFFFF' } }}>
                 {menuItems.map((item) => (
                     <Button className='menu-item' key={item.label} color="inherit" component={Link} to={item.to}>
                         {item.label}
@@ -52,11 +48,8 @@ const Header = () => {
                     </Badge>
                 </IconButton>
 
-                {location.pathname === '' || location.pathname === '/login' || location.pathname === '/signup' ? '' :<Box sx={{ width: 'auto', float: 'right' }}>
-                    <Button key={'login'} color="inherit" component={Link} to={isLoggedIn ? '/' : '/login'} sx={{ color: '#333333', border: '1px solid #7a9c89', '&:hover': { color: '#333333', borderColor: '#999999' } }} onClick={isLoggedIn ? handleLogout : undefined}>
-                        { isLoggedIn ? 'Logout' : 'Login / Signup' }
-                    </Button>
-                </Box>}
+                {/* user avatar and details */}
+                <UserDetails />
 
                 {isMobile && (
                 <IconButton color="inherit" onClick={() => toggleDrawer(true)}>

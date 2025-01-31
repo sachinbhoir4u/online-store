@@ -57,13 +57,20 @@ button:focus-visible {
 }
 
 /* ---- css overriding ---- */
+.user-details .user-avatar {
+  background-color: #999999;
+}
+.user-details .user-avatar:hover {
+  background-color: #222222;
+}
+
 .menu-item:hover {
   background: #0000002b;
 }
 .solid-button {
-  opacity: 0.85;
+  opacity: 0.9;
   padding: 12px !important;
-  background-image: linear-gradient(to right, #4caf50, #2e8b57) !important;
+  background-color: #1976d2 !important;
 }
 .solid-button:hover {
   opacity: 1;
@@ -76,6 +83,43 @@ button:focus-visible {
   background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
   background-size: 10px 10px;
 }
+/* Custom Google Button Styles */
+.google-button-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.google-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: transparent;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  cursor: pointer;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 1.5rem auto 0;
+  gap: 4px;
+  font-size: 16px;
+}
+
+.google-button .nsm7Bb-HzV7m-LgbsSe {
+  border: none;
+  background-color: transparent;
+  padding: 1.45rem;
+}
+
+.google-button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  background-color: #d3d3d3;
+  color: white;
+}
+
 .cart-icon {
   color: #ffffff;
   opacity: 0.8;
@@ -85,25 +129,17 @@ button:focus-visible {
   background-color: #0000002b !important;
   opacity: 1;
 }
-/* .text-box > label {
-  line-height: 1.2em !important;
-}
-.text-box input {
-  padding: 12px !important;
-} */
 .text-box fieldset,
 .text-box label {
-  color: #2e8b57 !important;
-  border-color: #2e8b57 !important;
-  // line-height: 1.2em !important;
-  // background: #ffffff;
+  color: #333333 !important;
+  border-color: #333333 !important;
 }
 .tabs {
   color: #333333;
   font-weight: bold !important;
 }
 .tabs.active {
-  color: #2e8b57 !important;
+  color: #333333 !important;
 }
 button:focus,
 button:focus-visible {
@@ -253,7 +289,7 @@ scrollbar track {
   bottom: 20px;
   right: 20px;
   padding: 12px;
-  background-color: #47a951;
+  background-color: rgba(0, 0, 0, 0.45);
   color: white;
   border-radius: 50%;
   border: none;
@@ -268,4 +304,5 @@ scrollbar track {
 }
 .scroll-to-top:hover {
   opacity: 1;
+  background-color: #2962ff;
 }
