@@ -11,10 +11,10 @@ const featuredProducts = [
     { id: 4, name: 'Product 4', description: 'Description for product 4', image: 'https://placehold.co/250x250?text=Product', price: '$39.99' }
 ]
 const images = [
-    'https://placehold.co/1900x500',
-    'https://placehold.co/1900x500?text=Image',
-    'https://placehold.co/1900x500?text=Image+3',
-    'https://placehold.co/1900x500',
+    'https://placehold.co/1900x500?text=Your Perfect Find Is Just a Click Away',
+    'https://placehold.co/1900x500?text=Shop the Latest Trends',
+    'https://placehold.co/1900x500?text=Don’t miss out on the latest drops',
+    'https://placehold.co/1900x500?text=Get more with exclusive deals and new arrivals',
   ];
 
 const Home = () => {
