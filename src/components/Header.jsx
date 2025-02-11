@@ -21,7 +21,7 @@ const Header = () => {
         { label: 'Women', to: '/category/women' },
         // { label: 'Electronics', to: '/category/electronics' },
         // { label: 'Home & Living', to: '/category/home-living' },
-        { label: 'Products', to: '/products' },
+        // { label: 'Products', to: '/products' },
         { label: 'Sale', to: '/category/sale' },
         { label: 'About Us', to: '/about-us' },
         { label: 'Contact Us', to: '/contact-us' },

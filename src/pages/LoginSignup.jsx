@@ -119,7 +119,7 @@ const LoginSignup = () => {
                                             Login
                                         </Button>
                                     </form>
-                                    {/* Google Login */}
+                                    {/* Login with Gmail  */}
                                     <GoogleLogin />
                                 </Box>
                             )}

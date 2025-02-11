@@ -1,11 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import { fetchProducts } from "../redux/slices/productSlice";
 import { Grid2, Card, CardContent, Typography, CircularProgress, Box, CardMedia, CardActions, Button } from "@mui/material";
 
 const Products = () => {
-  const USD_TO_INR = 86.76; // Conversion rate from USD to INR
+  const USD_TO_INR = 86.76;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const { products, loading, error } = useSelector(state => state.products);
 
   useEffect(() => {
@@ -28,6 +30,9 @@ const Products = () => {
         </Typography>
       </Box>
     );
+  }
+  const handleViewDetails = (productId) => {
+    navigate(`/products/${productId}`);
   }
 
   return (
@@ -84,7 +89,15 @@ const Products = () => {
                 </CardContent>
                 <CardActions sx={{ justifyContent: "space-between", padding: "10px" }}>
                   <Button size="small" variant="contained" color="primary">Add to Cart</Button>
-                  <Button size="small" variant="outlined" color="secondary">View Details</Button>
+                  <Button size="small" variant="outlined" color="secondary" sx={{
+                    borderColor: "black",
+                    color: "black",
+                    backgroundColor: "white",
+                    "&:hover": {
+                    borderColor: "black",
+                    backgroundColor: "rgba(0, 0, 0, 0.05)", 
+                    },
+                    }} onClick={() => handleViewDetails(product.id)}>View Details</Button>
                 </CardActions>
               </Card>
             </Box>
