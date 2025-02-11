@@ -10,7 +10,7 @@ import UserDetails from './UserDetails';
 const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);
     const theme = useTheme();
-    const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+    const isMobile = useMediaQuery(theme.breakpoints.down('md'));
     
     const toggleDrawer = (open) => {
         setDrawerOpen(open);
@@ -21,6 +21,7 @@ const Header = () => {
         { label: 'Women', to: '/category/women' },
         // { label: 'Electronics', to: '/category/electronics' },
         // { label: 'Home & Living', to: '/category/home-living' },
+        { label: 'Products', to: '/products' },
         { label: 'Sale', to: '/category/sale' },
         { label: 'About Us', to: '/about-us' },
         { label: 'Contact Us', to: '/contact-us' },
@@ -34,7 +35,7 @@ const Header = () => {
                     <img src={logo} width="60" height="50" alt="Logo" />
                 </Link>
 
-                <Box sx={{ color: '#FFFFFF', display: { xs: 'none', sm: 'flex' }, width: 'auto', '&:hover > .MuiButton-root': { color: '#FFFFFF' } }}>
+                <Box sx={{ color: '#FFFFFF', display: { xs: 'none', sm: 'none', md: 'flex' }, width: 'auto', '&:hover > .MuiButton-root': { color: '#FFFFFF' } }}>
                 {menuItems.map((item) => (
                     <Button className='menu-item' key={item.label} color="inherit" component={Link} to={item.to}>
                         {item.label}

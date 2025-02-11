@@ -10,7 +10,7 @@ import { jwtDecode } from "jwt-decode";
 const UserDetails = () => {
     const dispatch = useDispatch();
     const userData = useSelector((state) => state.auth.user);
-    const user = userData && { email: jwtDecode(userData).email, name: jwtDecode(userData).name} || localStorage.getItem('user');
+    const user = (userData && { email: jwtDecode(userData).email, name: jwtDecode(userData).name}) || JSON.parse(localStorage.getItem('user'));
     
     const [toggleUser, setToggleUser] = useState(null);
     const navigate = useNavigate();
@@ -75,13 +75,13 @@ const UserDetails = () => {
           <>
             {location.pathname === '' || location.pathname === '/login' || location.pathname === '/signup' ? '' :<Box sx={{ width: 'auto', float: 'right' }}>
                     <Button key={'login'} color="inherit" component={Link} to={user ? '/' : '/login'} sx={{ color: '#FFFFFF', border: '1px solid #7a9c89', '&:hover': { color: '#FFFFFF', borderColor: '#FFFFFF' } }} onClick={user ? handleLogout : undefined}>
-                        { user ? 'Logout' : 'Login / Signup' }
+                        { user ? 'Logout' : 'Login' }
                     </Button>
                     
                 </Box>}
           </>
         )}
-        </>
+      </>
     )
 }
 
