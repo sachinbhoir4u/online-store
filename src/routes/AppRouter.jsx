@@ -3,8 +3,8 @@ import Home from '../pages/Home';
 import Products from '../pages/Products';
 import ViewProduct from '../pages/ViewProduct';
 import LoginSignup from '../pages/LoginSignup';
-import PageLayout from '../components/PageLayout';
-
+import PageLayout from '../components/uicomponents/PageLayout';
+import PageNotFound from '../pages/PageNotFound'
 const AppRouter = () => {
   return (
     <Router>
@@ -17,6 +17,7 @@ const AppRouter = () => {
           <Route path="/products/:productId" element={<ViewProduct />} />
           <Route path="/login" element={<LoginSignup />} />
           <Route path="/signup" element={<LoginSignup />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </Router>

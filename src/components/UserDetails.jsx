@@ -43,7 +43,7 @@ const UserDetails = () => {
             </Avatar>
 
             <Menu
-              toggleUser={toggleUser}
+              toggleuser={toggleUser}
               open={Boolean(toggleUser)}
               onClose={handleCloseUserMenu}
               MenuListProps={{

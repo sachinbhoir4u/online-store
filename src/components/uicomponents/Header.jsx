@@ -5,7 +5,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MenuIcon from '@mui/icons-material/Menu';
 import logo from '/main-logo.svg';
 import ScrollToTopButton from './ScrollToTopButton';
-import UserDetails from './UserDetails';
+import UserDetails from '../UserDetails';
 
 const Header = () => {
     const [drawerOpen, setDrawerOpen] = useState(false);

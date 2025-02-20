@@ -253,6 +253,11 @@ button:focus-visible {
   background-color: #fff;
 }
 
+.page-not-found {
+  text-align: center;
+  padding: 10rem;
+  height: 50vh;
+}
 /* For Chrome, Edge, and Safari (Webkit-based browsers) */
 ::-webkit-scrollbar {
   width: 8px; /* Adjust the width of the scrollbar */
